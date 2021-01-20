@@ -21,6 +21,10 @@ html, body, main {
     width: 100%;
     margin: 0;
     background-color: black;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 
@@ -31,6 +35,8 @@ html, body, main {
     line-height: 1em;
     margin: 0 0 1em 0;    
 }
+
+
 
 *{
     margin: 0;
@@ -51,6 +57,10 @@ html, body, main {
   }
 
 
+p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
 
 /* BUTTON */
 
@@ -60,7 +70,7 @@ html, body, main {
 
   }
 
-  #about {
+  .popup {
     border-style: solid;
     border-width: 4px;
     font-family: 'misterpixel'; 
@@ -72,17 +82,55 @@ html, body, main {
     position: relative;
     display: inline-block;
     margin: 0 20px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     text-align: center;
     vertical-align: middle;
     user-select: none;
     color: black;
-    background-color: yellow;
+    background-color: white;
+  }
+
+  #about {
     animation:bob 5s infinite alternate;
   }
 
-  #about:hover {
-    opacity: .5;
+  .popup h2 {
+      font-size: 2.5em;
+  }
+
+  .popup h3 {
+      font-size: 2em;
+      margin-bottom: 10px;
+  }
+
+  .popup h4 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+  }
+  .popup a {
+      font-size: 1em;
+      color: blue;
+  }
+
+  #story {
+      font-size: 2em;
+      margin-bottom: 40px;
+      padding: 10px;
+      background-color: red; 
+      border-radius: 10px;
+      color: black;
+      border: 3px solid black;
+  }
+
+  
+  a:hover {
+    opacity: .8;
+}
+
+
+
+.lity-content {
+    transition: all 0s !important;
 }
 
 #about::after {
@@ -127,7 +175,7 @@ section {
 
   .obj {
       position: absolute;
-      width: 70%;
+      width: 45%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -136,7 +184,7 @@ section {
       
   }
   .obj:hover {
-      opacity: .5;
+      opacity: .9;
   }
 
 
@@ -147,7 +195,6 @@ section {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: blue;
 }
 
 
@@ -158,9 +205,17 @@ section {
 .container div p {
     text-indent: -10000px;
 }
+
+section {
+    pointer-events: none;
+}
+
+section a {
+    pointer-events: all;
+}
   
   #section1 {
-    min-height: 5%;
+    min-height: 10%;
     height: 50%;
     max-height: 60%;
     background: yellow url('../assets/colo.png');
@@ -169,16 +224,17 @@ section {
   }
 
   #section2, #section3 {
-    min-height: 5%;
     height: 25%;
   }
   
   #section2{
-    background: blue url('../assets/mitolo.png');
+    min-height: 2%;
+    background: blue url('../assets/mitolo.png');;
     background-size: 100vw 100%;
     transition: all 0s;
   }
   #section3 {
+        min-height: 2%;
       background: red url('../assets/gital.png');
       background-size: 100vw 100%;
       position: absolute;
@@ -197,4 +253,19 @@ section {
         height: 50vh;
         position: relative;
       }
+
+      .popup h2 {
+        font-size: 2.5em;
+    }
+    .popup h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    .popup h4 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .popup p {
+      font-size: 1em;
+    }
 }

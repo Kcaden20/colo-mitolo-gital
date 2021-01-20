@@ -4,6 +4,7 @@
         <title>Colo-Mítolo-Gítal</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/lity.css">
         <meta name="description" content="Colo-Mitolo-Gítal is an anthology that reinterprets different family stories while layering in Colombian history and culture as a way to understand my own heritage through the lens of computation, the web, and play. This project was produced during the 2020 Fall Residency Program at Babycastles.">
         <meta name="keywords" content="Colombia, Family, Folklore, Babycastles">
         <meta name="author" content="Kevin Cadena">
@@ -11,7 +12,14 @@
     </head>
     <body>
         <nav>
-            <a id="about" href="">About</a>
+            <a id="about" class="popup" href="#about-popup" data-lity>About</a>
+            <div id="about-popup" class="lity-hide popup">
+                <p>Colo-Mitolo-Gítal is an anthology that reinterprets different family stories while layering in Colombian history and culture as a way to understand my own heritage through the lens of computation, the web, and play. Each object represents a chapter within the anthology. </p>
+                <p>Researched, Designed and Developed By <a href="http://kevincadena.com/">Kevin Cadena</a></p>
+                <p>Playtested by Andres Chang, Artemio Morales, Arnon Karnkaeng, Tracy Leung, and Hyacinth Ramsay</p>
+                <p>Special Thanks to Nidia Rincon, Claudia Rincon, and Chantal Feitosa</p>
+                <p> This project was produced during the 2020 Fall Residency Program at <a href="babycastles.com">Babycastles.</a> </p>
+                </div>
         </nav>
         <main>
             <div id="background" class="container">
@@ -27,13 +35,45 @@
             </div>
             <section>
                 <div id="edeeb">
-                    <img class="obj" src="assets/dedo.gif">
+                    <a href="#dedo-popup" data-lity><img class="obj" src="assets/dedo.gif"></a>
+                    <div id="dedo-popup" class="lity-hide popup">
+                        <h4>Chapter One</h4>
+                        <h2>El Dedo En El Baño</h2>
+                        <h4>Description</h4>
+                        <p> For generations, there was a cloth bag in my great grandmother’s bathroom said to contain the finger bone of my great-great grandmother who had passed away. When visiting her grave became impossible after my family was dislocated by the civil war, the bone was taken to maintain a spiritual link. What memories could this this bone hold?  </p>
+                        <p>Story passed down by my abuela, Nidia Rincon</p>
+                        <h4>Content Warning</h4>
+                        <p>Suggestions of state endorsed violence.</p>
+                        <br>
+                        <a id="story" href="">Read the Story</a>
+                        <br>
+                        </div>
                 </div>
                 <div id="lsct">
-                    <img class="obj" src="assets/tied.png">
+                    <a href="#tacones-popup" data-lity><img class="obj" src="assets/tied.png"></a>
+                    <div id="tacones-popup" class="lity-hide popup">
+                        <h4>Chapter Two</h4>
+                        <h2>La Señora Con Tacones</h2>
+                        <h4>Description</h4>
+                        <p> A well-liked woman on my father’s street mysteriously went missing after a night out. She was never found, but the sound of her heels clacking could still be heard. What could be the reason for her not returning?  </p>
+                        <p>Reasons relayed by my mom, grandmother and other family & friends.</p>
+                        <h4>Content Warning</h4>
+                        <p>While the story changes tone, there are some suggestions of mysogyny.</p>
+                        <br>
+                        <a id="story" href="">Read the Story</a>
+                        <br>
+                     </div>
                 </div>
             </section>
         </main>
         <script src="js/index.js"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+
+
+        <script src="js/lity.js"></script>
+
     </body>
 </html>
