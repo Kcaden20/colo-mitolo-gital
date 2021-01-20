@@ -1,0 +1,200 @@
+@keyframes bob{0%{top:0;}50%{top:0.2em;} 100%{top: 0em}}
+
+@font-face {
+	font-family: Feels-Fuzzy;
+	src: url(../assets/fonts/FeeeelsFuzzyRegular.ttf);
+	src: url(../assets/fonts/FeeeelsFuzzyRegular.woff);
+	src: url(../assets/fonts/FeeeelsFuzzyRegular.woff2);
+ }
+
+ @font-face {
+    font-family: 'misterpixel';
+    src: url('../assets/fonts/mister_pixel_regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/mister_pixel_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body, main {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+
+ h1, h2, h3, h4, h5, h6 {
+    font-family: Feels-Fuzzy;
+    color: black;
+    font-weight: 300;
+    line-height: 1em;
+    margin: 0 0 1em 0;    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  nav {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      z-index: 100;
+  }
+
+  a {
+      text-decoration: none;
+      font-size: 2em;
+  }
+
+
+
+/* BUTTON */
+
+  a#about {
+      padding: 20px;
+      padding-top: 15px;
+
+  }
+
+  #about {
+    border-style: solid;
+    border-width: 4px;
+    font-family: 'misterpixel'; 
+    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="black" /></svg>');
+    border-image-repeat: stretch;
+    border-image-width: 2;
+    border-image-slice: 2;
+    border-image-outset: 2;
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+    padding: 10px 20px;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    color: black;
+    background-color: yellow;
+    animation:bob 5s infinite alternate;
+  }
+
+  #about:hover {
+    opacity: .5;
+}
+
+#about::after {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    right: -4px;
+    left: -4px;
+    content: "";
+    box-shadow: inset -4px -4px rgba(0, 0, 0, 0.214);
+  }
+  
+  #about:focus::after,
+  #about:hover::after {
+    box-shadow: inset -6px -6px rgba(0, 0, 0, 0.214);
+  }
+
+
+/* MAIN CONTENT  */
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+  }
+
+  #edeeb, #lsct {
+    width: 50vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  #edeeb {
+    animation:bob 2s infinite alternate;
+    animation-delay: 1s;
+  }
+
+  #lsct {
+    animation:bob 2s infinite alternate;
+  }
+
+  .obj {
+      position: absolute;
+      width: 70%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-filter: drop-shadow(5px 5px 5px #222);
+      filter:         drop-shadow(5px 5px 5px #222); 
+      
+  }
+  .obj:hover {
+      opacity: .5;
+  }
+
+
+  /* BACKGROUND */
+
+.container{
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: blue;
+}
+
+
+.container div {
+    width: 100vw;
+}
+
+.container div p {
+    text-indent: -10000px;
+}
+  
+  #section1 {
+    min-height: 5%;
+    height: 50%;
+    max-height: 60%;
+    background: yellow url('../assets/colo.png');
+    background-size: 100vw 100%;
+
+  }
+
+  #section2, #section3 {
+    min-height: 5%;
+    height: 25%;
+  }
+  
+  #section2{
+    background: blue url('../assets/mitolo.png');
+    background-size: 100vw 100%;
+    transition: all 0s;
+  }
+  #section3 {
+      background: red url('../assets/gital.png');
+      background-size: 100vw 100%;
+      position: absolute;
+      bottom: 0;
+      max-height: 35%;
+  }
+
+@media only screen and (max-width: 750px) {
+
+    section {
+        display: block;
+        overflow: scroll;
+    }
+    #edeeb, #lsct {
+        width: 100vw;
+        height: 50vh;
+        position: relative;
+      }
+}
