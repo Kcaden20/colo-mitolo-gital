@@ -179,10 +179,17 @@ section {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      -webkit-filter: drop-shadow(5px 5px 5px #222);
-      filter:         drop-shadow(5px 5px 5px #222); 
+      -webkit-filter: drop-shadow(5px 5px 5px black);
+      filter:         
+      drop-shadow(5px 5px 5px black); 
       
   }
+
+  #lsct a img.obj {
+    width: 50%;
+  }
+
+
   .obj:hover {
       opacity: .9;
   }
@@ -252,6 +259,14 @@ section a {
         width: 100vw;
         height: 50vh;
         position: relative;
+      }
+
+      .obj {
+        width: 25%;
+      }
+
+      #lsct a img.obj {
+        width: 35%;
       }
 
       .popup h2 {

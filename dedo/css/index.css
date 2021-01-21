@@ -1,0 +1,667 @@
+/* ///////// HTML ELEMENTS */
+@font-face {
+    font-family: 'misterpixel';
+    src: url('../assets/fonts/mister_pixel_regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/mister_pixel_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@keyframes bob{0%{top:0;}50%{top:0.2em;} 100%{top: 0em}}
+
+html, body {
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+    cursor: url(../assets/CursorHover.png) 25 10, auto;
+}
+
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    opacity: 0;
+    text-align: center;
+    color: white;
+    font-family: 'misterpixel';
+    
+}
+
+.overlay h1 {
+    text-align: center;
+}
+
+.overlay div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    cursor: url(../assets/CursorRegular.png) 25 10, auto;
+}
+
+
+
+.display {
+    opacity: 1 !important;
+    z-index: 1 !important;
+}
+
+#intro {
+    background-color:black;
+}
+
+h1 {
+    font-family: 'misterpixel';
+    font-size: 3em;
+    line-height: 1.5em;
+    text-align: left;
+    color: white;
+    text-transform: capitalize;
+}
+
+
+._container div {
+    width: 40%;
+    padding: 0 5%;
+    float: left;
+    overflow: visible;
+}
+
+#_center {
+    z-index: 1000;
+}
+._left h1 {
+    padding-right: 25%;
+}
+._right h1 {
+    padding-left: 30%;
+}
+
+
+#finger {
+/* Scale to 10% */
+    width: 2%;
+}
+
+#bag {
+/* Scale to 65% */
+    width: 10%;
+    max-width: 680px;
+}
+
+#bag:hover {
+    opacity: .7;
+}
+/* INSTANCE OF FLEXBOX CALLED */
+._right, ._left {
+    height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Bag Container */
+._container ._obj {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    cursor: url(../assets/CursorRegular.png) 25 10, auto;
+
+}
+
+/* Attaches in Jquery to ._obj */
+.no-click {
+    pointer-events: none;
+}
+
+.cursor {
+    cursor: url(../assets/CursorHold.png) 25 10, auto;
+}
+
+.mouseDown {
+    cursor: url(../assets/CursorDown.png) 25 10, auto !important;
+}
+
+/* Objects */
+.circle{
+    width:300px !important;
+    height:300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position:absolute;
+    visibility: hidden; 
+    left: 4%;
+    top: 2%;
+    transform:translate3d(-50%,-50%,0);
+    transition:transform 0.2s cubic-bezier(.02,1.23,.79,1.08);
+    pointer-events: none;
+  }
+
+div#inline {
+      color: white;
+      padding: 40px;
+      font-size: 1.5em;
+      font-family: 'misterpixel';
+  }
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1200px) { 
+h1 {
+    font-size: 3em;
+}
+}
+
+@media only screen and (max-width: 1050px) { 
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media only screen and (max-width: 700px) { 
+    ._container div {
+        width: 90%;
+        padding: 0 5%;
+        overflow: visible;
+    }
+
+    ._right, ._left {
+        height: 50vh;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+}
+
+p {
+    color: white;
+    opacity: .5;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 60px;
+    font-family: 'misterpixel';
+    display: none;
+
+}
+
+
+
+
+/* //END */
+.overlaid {
+    position: absolute;
+    width: 100vw; 
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.cursor-faded-click {
+    cursor: url(../assets/CursorRegular_Faded.png) 25 10, auto !important;
+}
+
+.mouseDown-faded {
+    cursor: url(../assets/CursorDown-faded.png) 25 10, auto !important;
+}
+
+.cursor-faded {
+    cursor: url(../assets/CursorHoldFaded.png) 25 10, auto !important;
+}
+
+
+.visibility {
+    visibility: visible;
+}
+
+.conservative {
+    color: #006ff4;
+    text-align: right;
+    }
+
+.overlaid h2 {
+    opacity: 0;
+    position: absolute;
+    padding-left: 20px;
+}
+
+.centered {
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);   
+}
+
+h1.display {
+    opacity: 1;
+}
+
+.images {
+    position: absolute;
+    bottom: -7px;
+    right: 0;
+    pointer-events: none;
+}
+
+#finger-two {
+    background-image: url(../assets/finger_web.png);
+    width: 300px;
+    opacity: .3;
+    left: -2%;
+    top: 5%;
+}
+
+.images img {
+    width: 400px;
+    margin-right: 20px;
+    pointer-events: none;
+}
+
+#house {
+    width: 300px;
+}
+
+#credit {
+    color: white;
+    font-size: 2em;
+    font-family: 'misterpixel'; 
+    position: absolute;
+    text-align: center;
+}
+
+a {
+    color: yellow;
+    cursor: url(../assets/CursorRegular.png) 25 10, auto
+}
+
+#tomb {
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    width: 100px;
+    pointer-events: none;
+}
+
+#enter {
+    border-style: solid;
+    border-width: 4px;
+    font-family: 'misterpixel'; 
+    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+    border-image-repeat: stretch;
+    border-image-width: 2;
+    border-image-slice: 2;
+    border-image-outset: 2;
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+    padding: 10px 20px;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    color: white;
+    background-color: rgb(200,30,50);
+    animation:bob 1s infinite alternate;
+}
+
+#enter:hover {
+    opacity: .5;
+}
+
+#enter::after {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    right: -4px;
+    left: -4px;
+    content: "";
+    box-shadow: inset -4px -4px rgba(0, 0, 0, 0.214);
+  }
+  
+  #enter:focus::after,
+  #enter:hover::after {
+    box-shadow: inset -6px -6px rgba(0, 0, 0, 0.214);
+  }
+
+  
+.blue {
+    background-color:#006ff4 !important;
+}
+
+#text-box {
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}
+.float-right {
+    float: right; 
+}
+
+
+.display-once {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.display-none {
+    display: none !important;
+}
+@media only screen and (max-width: 980px) { 
+    .images img {
+        width: 250px;
+        margin-right: 10px;
+    }
+
+    #tomb {
+        width: 50px;
+        left: 25px;
+    }
+
+    #house {
+        width: 150px;
+    }
+
+}
+
+@media only screen and (max-width: 700px) { 
+    .overlaid h1 {
+        font-size: 2.5em;
+    }
+    .overlaid h2 {
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 400px) { 
+
+    #credit {
+        color: white;
+        font-size: 1.5em;
+        font-family: 'misterpixel'; 
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+
+    ._container ._left h1, ._container ._right h1  {
+        margin-top: 0;
+        padding-right: 0;
+        padding-left: 0;
+        font-size: 2em;
+
+    }
+
+    .images img {
+        width: 150px;
+        margin-right: 10px;
+    }
+
+    #tomb {
+        width: 35px;
+        left: 25px;
+    }
+
+    #house {
+        width: 100px;
+    }
+
+    .overlaid h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 2em !important;
+    }  
+
+    .circle {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%) !important;
+        width: 150px;
+        height: 150px;
+    }
+
+    .overlaid .circle {
+        visibility: visible;
+    }
+
+    #finger-two {
+        opacity: .3;
+    }
+
+    #intro div {
+        width: 90%;
+    }
+
+    p {
+        display: block;
+    }
+
+}
+
+/*! Lity - v2.4.1 - 2020-04-26
+* http://sorgalla.com/lity/
+* Copyright (c) 2015-2020 Jan Sorgalla; Licensed MIT */
+.lity {
+    z-index: 9990;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    white-space: nowrap;
+    background: #0b0b0b;
+    background: rgba(0, 0, 0, 0.9);
+    outline: none !important;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+  }
+  .lity.lity-opened {
+    opacity: 1;
+  }
+  .lity.lity-closed {
+    opacity: 0;
+  }
+  .lity * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .lity-wrap {
+    z-index: 9990;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    outline: none !important;
+  }
+  .lity-wrap:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+  .lity-loader {
+    z-index: 9991;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.8em;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+  }
+  .lity-loading .lity-loader {
+    opacity: 1;
+  }
+  .lity-container {
+    z-index: 9992;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    white-space: normal;
+    max-width: 100%;
+    max-height: 100%;
+    outline: none !important;
+  }
+  .lity-content {
+    z-index: 9993;
+    width: 100%;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: -o-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
+  }
+  .lity-loading .lity-content,
+  .lity-closed .lity-content {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+         -o-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .lity-content:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+  .lity-close {
+    z-index: 9994;
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 0;
+    color: #fff;
+    font-style: normal;
+    font-size: 35px;
+    font-family: Arial, Baskerville, monospace;
+    line-height: 35px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    border: 0;
+    background: none;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .lity-close::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  .lity-close:hover,
+  .lity-close:focus,
+  .lity-close:active,
+  .lity-close:visited {
+    text-decoration: none;
+    text-align: center;
+    padding: 0;
+    color: #fff;
+    font-style: normal;
+    font-size: 35px;
+    font-family: Arial, Baskerville, monospace;
+    line-height: 35px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    border: 0;
+    background: none;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .lity-close:active {
+    top: 1px;
+  }
+  /* Image */
+  .lity-image img {
+    max-width: 100%;
+    display: block;
+    line-height: 0;
+    border: 0;
+  }
+  /* iFrame */
+  .lity-iframe .lity-container,
+  .lity-youtube .lity-container,
+  .lity-vimeo .lity-container,
+  .lity-facebookvideo .lity-container,
+  .lity-googlemaps .lity-container {
+    width: 100%;
+    max-width: 964px;
+  }
+  .lity-iframe-container {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: auto;
+    pointer-events: auto;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+  }
+  .lity-iframe-container iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #000;
+  }
+  .lity-hide {
+    display: none;
+  }
+  

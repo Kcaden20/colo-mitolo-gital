@@ -1,0 +1,584 @@
+@font-face {
+  font-family: 'misterpixel';
+  src: url('../assets/fonts/mister_pixel_regular-webfont.woff2') format('woff2'),
+       url('../assets/fonts/mister_pixel_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@-webkit-keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body {
+  background-color: black;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'misterpixel';
+  text-transform: uppercase;
+  color: white; 
+  text-align: center;
+}
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+#start {
+ pointer-events: all !important;
+}
+.win-text {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+#win-state {
+  z-index: -1;
+  pointer-events: all !important;
+}
+
+div#inline {
+  color: white;
+  padding: 40px;
+  font-size: 1.5em;
+  font-family: 'misterpixel';
+}
+
+/* Terminal CSS Code */
+.four-oh-four {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 2;
+  transition: opacity 300ms ease-out;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.four-oh-four .dJAX_internal {
+  opacity: 0.0;
+}
+.four-oh-four form, .four-oh-four input {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+
+.terminal {
+  position: absolute;
+  top: 0;
+  height: 16vh;
+  padding: 0rem 4rem 6rem 4rem;
+  width: calc(100vw - 8rem);
+  overflow: scroll;
+  scroll-padding-bottom: 200px;
+
+}
+
+#introTerminal {
+  background-color: black;
+}
+
+
+
+.terminal .prompt {
+  display: block;
+  font-family: 'misterpixel' ,'AndaleMono', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.15em;
+  white-space: pre-wrap;
+  line-height: 1;
+  margin-bottom: 0.75em;
+}
+
+.ending-quote {
+  font-family: 'misterpixel' ,'AndaleMono', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+
+
+.introTerminal {
+
+  color: white; 
+}
+
+.introTerminal .prompt { 
+  color: white;
+}
+
+
+.terminal .prompt:before {
+  content: '>';
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.pe-none {
+  pointer-events: none;
+}
+
+h3 a {
+  font-size: 1em;
+}
+
+
+
+.terminal .new-output {
+  display: inline-block;
+}
+.terminal .new-output:after {
+  display: inline-block;
+  vertical-align: -0.15em;
+  width: 0.75em;
+  height: 1em;
+  margin-left: 5px;
+  background: #CE1126;
+  box-shadow: 1px 1px 1px rgba(31, 240, 66, 0.65), -1px -1px 1px rgba(31, 240, 66, 0.65), 1px -1px 1px rgba(31, 240, 66, 0.65), -1px 1px 1px rgba(31, 240, 66, 0.65);
+  -webkit-animation: cursor-blink 1.25s steps(1) infinite;
+  -moz-animation: cursor-blink 1.25s steps(1) infinite;
+  animation: cursor-blink 1.25s steps(1) infinite;
+  content: '';
+}
+
+.not-focused:after {
+  background: #8c0b1a !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  animation: none !important;
+}
+
+.four-oh-four-form {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+
+.senora-step-two {
+  background:url('../assets/senora_step_two.png'); 
+}
+
+
+.senora-walking {
+  background:url('../assets/senora_step_one.png');
+}
+
+
+.after-senora-walking-one {
+  background: url('../assets/senora_after_step-one.png');
+}
+
+.after-senora-walking-two {
+  background:url('../assets/senora_after_step-two.png'); 
+}
+
+.senora-rest {
+  background:url('../assets/senora_rest.png');
+}
+
+.after-senora-rest {
+  background: url('../assets/senora_after_resting.png');
+}
+.senora {
+  height: 350px;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform:translateX(-50%);
+  width: 160px; 
+  margin-bottom: 0px !important;
+  background-size: contain;
+  background-repeat: no-repeat ;
+
+}
+
+/* Viewport Code */
+.viewport {
+  height: calc(100vh - (10vh + 8rem));
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.viewport div { 
+  font-family: 'misterpixel' ,'AndaleMono', monospace;
+    white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.viewport div p {
+  margin: 1.3em 0em;
+  line-height: 0;
+}
+
+
+/* Movement Related */
+.rock {
+  position: relative;
+}
+
+.rock p {
+  word-spacing: 20px;
+  opacity: .8;
+}
+
+.rock p:before, .rock p:after{
+  content: '"';
+}
+
+.hint p:before, .hint p:after {
+  content: '';
+}
+
+
+
+#backgroundScroll {
+  z-index: -1;
+  position: absolute; 
+  height: calc(100vh - (10vh + 8rem));
+  width: 100vw;
+  min-width: 2000px;
+  opacity: .4;
+  right: 0;
+  background-position: bottom;
+}
+
+/* Prompts */
+#intro-prompt {
+  margin-left: 0%;
+  color: white;
+}
+
+.hint p { 
+  font-size: .6em;
+  margin-left: 140% !important;
+
+}
+
+#kidnapped {
+  margin-left: 50%;
+}
+
+#earthquake {
+  margin-left: 55%;
+}
+
+#mountains {
+  margin-left: 60%;
+}
+
+#visa {
+  margin-left: 55%;
+}
+
+#artist {
+  margin-left: 50%;
+}
+
+#bakery {
+  margin-left: 70%;
+}
+
+#badcop {
+  margin-left: 55%;
+}
+
+#son {
+  margin-left: 45%;
+}
+
+#herself {
+  margin-left: 50%;
+}
+
+
+
+
+/* Overlays */
+.overlay {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.mobile {
+  z-index: 100;
+  pointer-events: all;
+  width: 90%;
+  display: none;
+
+}
+
+#overlay {
+  z-index: 100;
+}
+
+a {
+  color: yellow;
+  font-size: 2em; 
+  font-family: 'misterpixel';
+}
+
+.opacity-light {
+  opacity: .3;
+}
+
+
+#backgroundColor.intro-bg {
+  background: black;
+}
+
+.a-lot {
+  background: url(../assets/leaving.jpg);
+}
+
+.a-lot-bg {
+  background: url(../assets/bg-two.png);
+}
+
+#backgroundColor.a-lot-bg  {
+  background: #cadbd5; 
+}
+
+
+
+.intro-bg {
+  background: url(../assets/bg-one.png);
+}
+
+#backgroundScroll.intro-bg {
+  left: 0;
+}
+
+.she-h {
+  background: url(../assets/kdnp.jpg);
+}
+
+.she-h-bg {
+  background: url(../assets/bg-three.png);
+}
+
+#backgroundColor.she-h-bg {
+  background: lightgray;
+}
+
+.her-h {
+  background: url(../assets/erthqke.jpg);
+}
+
+.her-h-bg {
+  background: url(../assets/bg-four.png);
+}
+
+#backgroundColor.her-h-bg {
+  background: skyblue;
+}
+
+.she-l {
+  background: url(../assets/mntns.jpg);
+}
+
+.she-l-bg {
+  background: url(../assets/bg-five.png);
+}
+
+#backgroundScroll.she-l-bg, #backgroundScroll.her-f-bg, #backgroundScroll.she-b-bg, #backgroundScroll.her-m-bg {
+  opacity: .2;
+}
+
+#backgroundColor.she-l-bg {
+  background: lightblue;
+}
+
+.her-f {
+  background: url(../assets/visa.jpg);
+}
+
+.her-f-bg {
+  background: url(../assets/bg-six.png);
+}
+
+#backgroundColor.her-f-bg {
+  background: rgb(193, 191, 191);
+}
+
+.she-b {
+  background: url(../assets/artst.jpg);
+}
+
+.she-b-bg {
+  background: url(../assets/bg-seven.png);
+}
+
+#backgroundColor.she-b-bg {
+  background: gold;
+}
+
+
+.she-m {
+  background: url(../assets/pndra.jpg);
+}
+
+.she-m-bg {
+  background: url(../assets/bg-eight.png);
+}
+
+#backgroundColor.she-m-bg {
+  background: black;
+  color:white;
+}
+
+.her-m {
+  background: url(../assets/bdcp.jpg);
+
+}
+
+.her-m-bg {
+  background: url(../assets/bg-nine.png);
+}
+
+#backgroundColor.her-m-bg {
+  background: grey;
+  color: black;
+}
+
+.she-w {
+  background: url(../assets/airplane.jpg);
+}
+
+.she-w-bg {
+  background: url(../assets/bg-ten.png);
+}
+
+#backgroundColor.she-w-bg {
+  background: rgb(224, 192, 247);
+  width: 8000px;
+}
+
+.after {
+  background: url(../assets/comfort.jpg);
+}
+
+.position-right {
+  right: -50%;
+}
+.bg-code {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-repeat {
+  background-repeat: repeat-x;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.fade {
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+
+.display-none {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.display-none-one {
+  display: none;
+}
+#razones {
+  text-align: center;
+
+}
+
+#razones a:first-child {
+  margin-top: 1em;
+}
+
+#razones a {
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+
+@media only screen and (max-width: 400px) {
+  .mobile {
+    display: block;
+    padding: 0 5%;
+
+  }
+}
