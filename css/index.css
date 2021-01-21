@@ -228,18 +228,18 @@ section a {
   }
   
   #section2{
-    min-height: 2%;
+    min-height: 5%;
     background: blue url('../assets/mitolo.png');;
     background-size: 100vw 100%;
     transition: all 0s;
   }
   #section3 {
-        min-height: 2%;
+    min-height: 5%;
       background: red url('../assets/gital.png');
       background-size: 100vw 100%;
       position: absolute;
       bottom: 0;
-      max-height: 35%;
+      max-height: 40%;
   }
 
 @media only screen and (max-width: 750px) {
