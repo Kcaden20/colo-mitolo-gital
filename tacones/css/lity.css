@@ -1,6 +1,13 @@
-/*! Lity - v2.4.1 - 2020-04-26
-* http://sorgalla.com/lity/
-* Copyright (c) 2015-2020 Jan Sorgalla; Licensed MIT */
+@font-face {
+  font-family: 'misterpixel';
+  src: url('../assets/fonts/mister_pixel_regular-webfont.woff2') format('woff2'),
+       url('../assets/fonts/mister_pixel_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+  
 .lity {
   z-index: 9990;
   position: fixed;
@@ -9,13 +16,8 @@
   bottom: 0;
   left: 0;
   white-space: nowrap;
-  background: #0b0b0b;
-  background: rgba(0, 0, 0, 0.9);
   outline: none !important;
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
 }
 .lity.lity-opened {
   opacity: 1;
@@ -56,9 +58,6 @@
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
 }
 .lity-loading .lity-loader {
   opacity: 1;
@@ -70,7 +69,7 @@
   vertical-align: middle;
   display: inline-block;
   white-space: normal;
-  max-width: 100%;
+  max-width: 80%;
   max-height: 100%;
   outline: none !important;
 }
@@ -81,11 +80,6 @@
       -ms-transform: scale(1);
        -o-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  -o-transition: -o-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
 }
 .lity-loading .lity-content,
 .lity-closed .lity-content {
@@ -105,32 +99,28 @@
   width: auto;
   height: auto;
   z-index: -1;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 .lity-close {
   z-index: 9994;
   width: 35px;
-  height: 35px;
-  position: fixed;
+  height: 45px;
+  position: absolute;
   right: 0;
-  top: 0;
+  top: -15px;
   -webkit-appearance: none;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  padding: 0;
-  color: #fff;
+  padding: 0px;
+  background-color: blue;
+  color: black;
   font-style: normal;
   font-size: 35px;
-  font-family: Arial, Baskerville, monospace;
+  font-family: "misterpixel";
   line-height: 35px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  border: 0;
-  background: none;
+  border: 3px solid black;
+  border-radius: 10px;
   outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
 }
 .lity-close::-moz-focus-inner {
   border: 0;
@@ -140,23 +130,8 @@
 .lity-close:focus,
 .lity-close:active,
 .lity-close:visited {
-  text-decoration: none;
-  text-align: center;
-  padding: 0;
-  color: #fff;
-  font-style: normal;
-  font-size: 35px;
-  font-family: Arial, Baskerville, monospace;
-  line-height: 35px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  border: 0;
-  background: none;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.lity-close:active {
-  top: 1px;
+  cursor: url('../assets/CursorRegular.png') !important;
+  opacity: .5;
 }
 /* Image */
 .lity-image img {
@@ -197,4 +172,11 @@
 }
 .lity-hide {
   display: none;
+}
+
+@media only screen and (max-width: 750px) { 
+  .lity-container {
+    max-width: 100% !important;
+  }
+
 }

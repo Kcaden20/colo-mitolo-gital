@@ -7,6 +7,10 @@
 
 }
 
+
+
+@keyframes bob{0%{top:0;}50%{top:0.2em;} 100%{top: 0em}}
+
 @-webkit-keyframes cursor-blink {
   0% {
     opacity: 0;
@@ -40,6 +44,13 @@
     opacity: 0;
   }
 }
+
+
+
+
+@keyframes bob{0%{top:0;}50%{top:0.2em;} 100%{top: 0em}}
+
+
 body {
   background-color: black;
   margin: 0;
@@ -131,6 +142,81 @@ div#inline {
 
 #introTerminal {
   background-color: black;
+}
+
+.popup {
+  border-style: solid;
+  border-width: 4px;
+  font-family: 'misterpixel';
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="black" /></svg>');
+  border-image-repeat: stretch;
+  border-image-width: 2;
+  border-image-slice: 2;
+  border-image-outset: 2;
+  position: relative;
+  margin: 0 20px;
+  padding: 20px 20px;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: white;
+}
+
+h3 a {
+  color: white;
+  animation:bob 5s infinite alternate;
+  position: relative;
+}
+
+a.inverse {
+  font-size: 1.5em;
+}
+div#inline {
+  color: black;
+}
+
+
+
+.popup  {
+  animation:bob 5s infinite alternate;
+}
+
+.inverse {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="white" /></svg>');
+}
+
+.popup::after {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  right: -4px;
+  left: -4px;
+  content: "";
+  box-shadow: inset -4px -4px rgba(0, 0, 0, 0.214);
+}
+
+.popup:focus::after,
+.popup:hover::after {
+  box-shadow: inset -6px -6px rgba(0, 0, 0, 0.214);
+}
+
+
+.inverse::after {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  right: -4px;
+  left: -4px;
+  content: "";
+  box-shadow: inset -4px -4px rgba(255, 255, 255, 0.536);
+}
+
+.inverse:focus::after,
+.inverse:hover::after {
+  box-shadow: inset -6px -6px rgba(255, 255, 255, 0.468);
 }
 
 
@@ -267,7 +353,7 @@ h3 a {
   font-family: 'misterpixel' ,'AndaleMono', monospace;
     white-space: nowrap;
   text-transform: uppercase;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .viewport div p {
@@ -560,6 +646,9 @@ a {
 }
 
 #razones a {
+  color: white;
+  position: relative;
+  animation: bob 5s infinite alternate;
   display: block;
   text-transform: uppercase;
   margin-bottom: 1em;
