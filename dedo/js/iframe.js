@@ -58,27 +58,6 @@ $(document).on("mousedown", function () {
   $('body').removeClass("mouseDown-faded");
 });
 
-var progressEnter = function(event) {
-  event.preventDefault();
-  var enter_pressed; 
-  if (event.keyCode === 13) { 
-    grab.play();
-     enter_pressed = true;
-  }
-
-  if (enter_pressed) {
-    clearTimeout(keyup_timeout);
-    keyup_timeout = setTimeout(function() {
-      textClear();
-    }, net_timeout);
-}
-
-finalClick();
-
-};
-
-document.addEventListener("keypress", progressEnter);
-
 var progressClick = function(event){
   event.preventDefault()
   grab.play();
@@ -103,7 +82,6 @@ function finalClick() {
       $('.circle').remove();
       classRemove(credit, 'display-none');
       body.removeEventListener("click", progressClick);
-      body.removeEventListener('keypress', progressEnter);
     }, 3000);
   }
 }

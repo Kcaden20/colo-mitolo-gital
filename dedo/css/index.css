@@ -122,6 +122,72 @@ h1 {
 
 }
 
+.popup {
+    border-style: solid;
+    border-width: 4px;
+    font-family: 'misterpixel';
+    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="black" /></svg>');
+    border-image-repeat: stretch;
+    border-image-width: 2;
+    border-image-slice: 2;
+    border-image-outset: 2;
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+    padding: 20px 20px;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: white;
+  }
+
+
+
+  .popup  {
+    animation:bob 5s infinite alternate;
+  }
+
+  .inverse {
+      text-decoration: none;
+      color: white;
+      background-color: black;
+      border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="white" /></svg>');
+  }
+
+  .popup::after {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    right: -4px;
+    left: -4px;
+    content: "";
+    box-shadow: inset -4px -4px rgba(0, 0, 0, 0.214);
+  }
+
+  .popup:focus::after,
+  .popup:hover::after {
+    box-shadow: inset -6px -6px rgba(0, 0, 0, 0.214);
+  }
+
+
+  .inverse::after {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    right: -4px;
+    left: -4px;
+    content: "";
+    box-shadow: inset -4px -4px rgba(255, 255, 255, 0.536);
+  }
+
+  .inverse:focus::after,
+  .inverse:hover::after {
+    box-shadow: inset -6px -6px rgba(255, 255, 255, 0.468);
+  }
+
+
+
+
 /* Attaches in Jquery to ._obj */
 .no-click {
     pointer-events: none;
@@ -152,7 +218,6 @@ h1 {
   }
 
 div#inline {
-      color: white;
       padding: 40px;
       font-size: 1.5em;
       font-family: 'misterpixel';
@@ -439,7 +504,7 @@ a {
 
     .circle {
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%) !important;
         width: 150px;
@@ -464,7 +529,7 @@ a {
       transform: none;
     }
     ._right, ._left {
-      height: 40vh;
+      height: 45vh;
     }
 
     ._container ._obj {
@@ -476,11 +541,16 @@ a {
     }
 
 }
-
-/*! Lity - v2.4.1 - 2020-04-26
-* http://sorgalla.com/lity/
-* Copyright (c) 2015-2020 Jan Sorgalla; Licensed MIT */
-.lity {
+@font-face {
+    font-family: 'misterpixel';
+    src: url('../assets/fonts/mister_pixel_regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/mister_pixel_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+  
+  .lity {
     z-index: 9990;
     position: fixed;
     top: 0;
@@ -488,13 +558,8 @@ a {
     bottom: 0;
     left: 0;
     white-space: nowrap;
-    background: #0b0b0b;
-    background: rgba(0, 0, 0, 0.9);
     outline: none !important;
     opacity: 0;
-    -webkit-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
   }
   .lity.lity-opened {
     opacity: 1;
@@ -535,9 +600,6 @@ a {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 0;
-    -webkit-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
   }
   .lity-loading .lity-loader {
     opacity: 1;
@@ -549,7 +611,7 @@ a {
     vertical-align: middle;
     display: inline-block;
     white-space: normal;
-    max-width: 100%;
+    max-width: 80%;
     max-height: 100%;
     outline: none !important;
   }
@@ -560,11 +622,6 @@ a {
         -ms-transform: scale(1);
          -o-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: -webkit-transform 0.3s ease;
-    -o-transition: -o-transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease, -o-transform 0.3s ease;
   }
   .lity-loading .lity-content,
   .lity-closed .lity-content {
@@ -584,32 +641,28 @@ a {
     width: auto;
     height: auto;
     z-index: -1;
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   }
   .lity-close {
     z-index: 9994;
     width: 35px;
-    height: 35px;
-    position: fixed;
+    height: 45px;
+    position: absolute;
     right: 0;
-    top: 0;
+    top: -15px;
     -webkit-appearance: none;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    padding: 0;
-    color: #fff;
+    padding: 0px;
+    background-color: blue;
+    color: black;
     font-style: normal;
     font-size: 35px;
-    font-family: Arial, Baskerville, monospace;
+    font-family: "misterpixel";
     line-height: 35px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-    border: 0;
-    background: none;
+    border: 3px solid black;
+    border-radius: 10px;
     outline: none;
-    -webkit-box-shadow: none;
-            box-shadow: none;
   }
   .lity-close::-moz-focus-inner {
     border: 0;
@@ -619,23 +672,8 @@ a {
   .lity-close:focus,
   .lity-close:active,
   .lity-close:visited {
-    text-decoration: none;
-    text-align: center;
-    padding: 0;
-    color: #fff;
-    font-style: normal;
-    font-size: 35px;
-    font-family: Arial, Baskerville, monospace;
-    line-height: 35px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-    border: 0;
-    background: none;
-    outline: none;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  .lity-close:active {
-    top: 1px;
+    cursor: url('../assets/CursorRegular.png') !important;
+    opacity: .5;
   }
   /* Image */
   .lity-image img {
@@ -677,3 +715,11 @@ a {
   .lity-hide {
     display: none;
   }
+  
+  @media only screen and (max-width: 750px) { 
+    .lity-container {
+      max-width: 100% !important;
+    }
+  
+  }
+  
