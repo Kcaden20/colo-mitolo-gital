@@ -90,7 +90,7 @@ p {
     background-color: white;
   }
 
-  #about {
+  #about, #audio {
     animation:bob 5s infinite alternate;
   }
 
@@ -133,7 +133,7 @@ p {
     transition: all 0s !important;
 }
 
-#about::after {
+#about::after, #audio::after {
     position: absolute;
     top: -4px;
     bottom: -4px;
@@ -144,7 +144,7 @@ p {
   }
   
   #about:focus::after,
-  #about:hover::after {
+  #about:hover::after, #audio:hover::after, #audio:focus::after {
     box-shadow: inset -6px -6px rgba(0, 0, 0, 0.214);
   }
 
@@ -251,6 +251,16 @@ section a {
 
 @media only screen and (max-width: 750px) {
 
+  a#about, a#audio {
+    padding: 5px;
+    font-size: 1.5em;
+  }
+  nav {
+    top: inherit;
+    width: 100%;
+    left: 0px; 
+    bottom: 20px;
+  }
     section {
         display: block;
         overflow: scroll;
