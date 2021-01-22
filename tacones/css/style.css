@@ -52,7 +52,7 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: 'misterpixel';
   text-transform: uppercase;
-  color: white; 
+  color: white;
   text-align: center;
 }
 h1 {
@@ -158,10 +158,10 @@ div#inline {
 
 .introTerminal {
 
-  color: white; 
+  color: white;
 }
 
-.introTerminal .prompt { 
+.introTerminal .prompt {
   color: white;
 }
 
@@ -216,7 +216,7 @@ h3 a {
 
 
 .senora-step-two {
-  background:url('../assets/senora_step_two.png'); 
+  background:url('../assets/senora_step_two.png');
 }
 
 
@@ -230,7 +230,7 @@ h3 a {
 }
 
 .after-senora-walking-two {
-  background:url('../assets/senora_after_step-two.png'); 
+  background:url('../assets/senora_after_step-two.png');
 }
 
 .senora-rest {
@@ -246,7 +246,7 @@ h3 a {
   bottom: -15px;
   left: 50%;
   transform:translateX(-50%);
-  width: 160px; 
+  width: 160px;
   margin-bottom: 0px !important;
   background-size: contain;
   background-repeat: no-repeat ;
@@ -263,17 +263,15 @@ h3 a {
   pointer-events: none;
 }
 
-.viewport div { 
+.viewport div {
   font-family: 'misterpixel' ,'AndaleMono', monospace;
     white-space: nowrap;
   text-transform: uppercase;
-  font-size: 2em;
-  margin-bottom: 15px;
+  font-size: 1.3em;
 }
 
 .viewport div p {
-  margin: 1.3em 0em;
-  line-height: 0;
+line-height: 0em;
 }
 
 
@@ -287,19 +285,12 @@ h3 a {
   opacity: .8;
 }
 
-.rock p:before, .rock p:after{
-  content: '"';
-}
-
-.hint p:before, .hint p:after {
-  content: '';
-}
 
 
 
 #backgroundScroll {
   z-index: -1;
-  position: absolute; 
+  position: absolute;
   height: calc(100vh - (10vh + 8rem));
   width: 100vw;
   min-width: 2000px;
@@ -314,7 +305,7 @@ h3 a {
   color: white;
 }
 
-.hint p { 
+.hint p {
   font-size: .6em;
   margin-left: 140% !important;
 
@@ -385,7 +376,7 @@ h3 a {
 
 a {
   color: yellow;
-  font-size: 2em; 
+  font-size: 2em;
   font-family: 'misterpixel';
 }
 
@@ -407,7 +398,7 @@ a {
 }
 
 #backgroundColor.a-lot-bg  {
-  background: #cadbd5; 
+  background: #cadbd5;
 }
 
 
@@ -575,7 +566,7 @@ a {
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .mobile {
     display: block;
     padding: 0 5%;

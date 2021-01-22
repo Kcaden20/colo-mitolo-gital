@@ -33,7 +33,7 @@ html, body, main {
     color: black;
     font-weight: 300;
     line-height: 1em;
-    margin: 0 0 1em 0;    
+    margin: 0 0 1em 0;
 }
 
 
@@ -73,7 +73,7 @@ p {
   .popup {
     border-style: solid;
     border-width: 4px;
-    font-family: 'misterpixel'; 
+    font-family: 'misterpixel';
     border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="black" /></svg>');
     border-image-repeat: stretch;
     border-image-width: 2;
@@ -116,13 +116,13 @@ p {
       font-size: 2em;
       margin-bottom: 40px;
       padding: 10px;
-      background-color: red; 
+      background-color: red;
       border-radius: 10px;
       color: black;
       border: 3px solid black;
   }
 
-  
+
   a:hover {
     opacity: .8;
 }
@@ -142,7 +142,7 @@ p {
     content: "";
     box-shadow: inset -4px -4px rgba(0, 0, 0, 0.214);
   }
-  
+
   #about:focus::after,
   #about:hover::after, #audio:hover::after, #audio:focus::after {
     box-shadow: inset -6px -6px rgba(0, 0, 0, 0.214);
@@ -180,9 +180,9 @@ section {
       left: 50%;
       transform: translate(-50%, -50%);
       -webkit-filter: drop-shadow(5px 5px 5px black);
-      filter:         
-      drop-shadow(5px 5px 5px black); 
-      
+      filter:
+      drop-shadow(5px 5px 5px black);
+
   }
 
   #lsct a img.obj {
@@ -220,7 +220,7 @@ section {
 section a {
     pointer-events: all;
 }
-  
+
   #section1 {
     min-height: 10%;
     height: 50%;
@@ -233,7 +233,7 @@ section a {
   #section2, #section3 {
     height: 25%;
   }
-  
+
   #section2{
     min-height: 5%;
     background: blue url('../assets/mitolo.png');;
@@ -258,7 +258,7 @@ section a {
   nav {
     top: inherit;
     width: 100%;
-    left: 0px; 
+    left: 0px;
     bottom: 20px;
   }
     section {
@@ -294,3 +294,12 @@ section a {
       font-size: 1em;
     }
 }
+
+@media only screen and (max-width: 500px) {
+  #edeeb, #lsct {
+    width: 100vw;
+    height: 40vh;
+    position: relative;
+  }
+
+  }

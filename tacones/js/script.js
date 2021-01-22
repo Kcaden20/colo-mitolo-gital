@@ -4,25 +4,25 @@ $( document ).ready(function() {
 	var intro = ["a lot will be said about her disappearance"];
 	var introComp = [];
 	var prompts = [
-		"she had been kidnapped", 
-		"her home was destroyed in the earthquake", 
+		"she had been kidnapped",
+		"her home was destroyed in the earthquake",
 		"she left the mountains and could not find her way back",
 		"her fathers visa finally went through",
 		"she became a famous artist",
 		"she made a bakery in queens her home",
 		"her man could not keep his job and she left with him",
-		"she wanted a better life for her son", 
-		"after building a new life she was happier now than before"
+		"she wanted a better life for her son",
+		"after building a new life she was happier now"
 	];
 
-	var chosenPrompts = []; 
-	var multiplier = -1; 
-	var slidePixel = 0; 
-	var slideBG = 0; 
-	var promptSlide = 0; 
-	var time = 4000; 
+	var chosenPrompts = [];
+	var multiplier = -1;
+	var slidePixel = 0;
+	var slideBG = 0;
+	var promptSlide = 0;
+	var time = 4000;
 	var resetCounter = 0;
-	var tipCounter = 0; 
+	var tipCounter = 0;
 
 	// Audio
 	var audioNumber = 0;
@@ -36,16 +36,16 @@ $( document ).ready(function() {
 
 	var elems = $("div[class*='-bg']");
 	//TEXT INPUT
-	
-		$('#start-game').click(() =>{ 
+
+		$('#start-game').click(() =>{
 
 			var inputReady = true;
 			var input = $('.404-input');
-	
+
 			playAudio(night, .4);
 
 			var introOverlay = document.getElementById('start');
-			introOverlay.classList.add("display-none"); 
+			introOverlay.classList.add("display-none");
 
 			setTimeout(function(){
 				$('#viewportScroll').removeClass('display-none');
@@ -67,17 +67,17 @@ $( document ).ready(function() {
 			$('.new-output').removeClass('not-focused');
 			event.stopPropagation();
 		});
-	
+
 		input.on('keyup', function(e){
 		$('.new-output').text(input.val());
 		});
-	
+
 		$('.four-oh-four-form').on('submit', function(e){
 		e.preventDefault();
 		var val = $(this).children($('.404-input')).val().replace(/['"]+/g, '').toLowerCase();
 		var href;
 		var input = $('.404-input');
-		var message = ""; 
+		var message = "";
 
 
 		if (intro.includes(val) && introComp.length == 0) {
@@ -87,8 +87,8 @@ $( document ).ready(function() {
 			slideAcross(0);
 			updateTerminal(message);
 			introComp.push(val);
-			
-			$('#intro-senora').addClass('display-none');			
+
+			$('#intro-senora').addClass('display-none');
 			$('#after-senora').addClass('after-senora-rest');
 			$('#after-senora').removeClass('display-none');
 
@@ -109,8 +109,8 @@ $( document ).ready(function() {
 			addKidnapped.classList.add('rock');
 
 			slidePixel = 0;
-			slideBG = 0; 
-			$('#backgroundScroll').css('width', '100vw'); 
+			slideBG = 0;
+			$('#backgroundScroll').css('width', '100vw');
 			switchAudio(night, city, .4);
 
 
@@ -126,7 +126,7 @@ $( document ).ready(function() {
 				slideAcross(0);
 
 			} else {
-				message = '"y que mas?" I asked. People will say that...' 
+				message = '"y que mas?" I asked. People will say that...'
 				addOverlay(val);
 				updateTerminal(message);
 				chosenPrompts.push(val);
@@ -158,7 +158,7 @@ $( document ).ready(function() {
 				city.pause();
 				bakery.pause()
 				ominous.pause()
-				
+
 			}, time);
 
 
@@ -176,16 +176,16 @@ $( document ).ready(function() {
 
 			var backGround = document.getElementById('backgroundScroll');
 			var backgroundClass = foundPrompt + '-bg'
-			var backgroundColor = document.getElementById('backgroundColor');			
+			var backgroundColor = document.getElementById('backgroundColor');
 
 			var elems = $("div[class*='-bg']");
 
-			
+
 			elems.attr('class', function(_, old){
 				return $.grep(old.split(/ +/), function(v){
 					 return !v.match(/-bg$/);
 				}).join(' ');
-			}) 
+			})
 
 			backGround.classList.add(backgroundClass);
 			backgroundColor.classList.add(backgroundClass);
@@ -253,26 +253,26 @@ $( document ).ready(function() {
 			$('#backgroundScroll').css('transform', 'translateX('+ y + 'px)');
 
 		}
-		
+
 		// TERMINAL
 		function updateTerminal(x){
             $('.new-output').removeClass('new-output');
             input.val('');
             $('.terminal').append('<p class="prompt">' + x + '</p><p class="prompt output new-output"></p>');
-            
+
             var p = $('.new-output');
             $('.new-output').velocity(
                 'scroll'
             ), {duration: 100}
         }
 
-	
+
 		function updateScroll(){
 			var element = document.getElementById("test");
 			var scrollDown = element.scrollHeight;
 			element.scrollTop = scrollDown - 100;
 		}
-	
+
 		function resetForm(){
 			var message = "Eso no fue una de las razones. They're just floating by..."
 			var input = $('.404-input');
@@ -282,28 +282,28 @@ $( document ).ready(function() {
 			input.val('');
 			$('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt output new-output"></p>');
 			var p = $('.new-output');
-			
-		
+
+
 			$('.new-output').velocity(
 				'scroll'
 			), {duration: 100}
-			
-			slidePixel = 0; 
-			slideBG = 0;	
-			$('#backgroundScroll').css('width', '100vw'); 
 
-			
+			slidePixel = 0;
+			slideBG = 0;
+			$('#backgroundScroll').css('width', '100vw');
+
+
 			if(resetCounter == 2 && introComp.length == 0) {
 
 				if(tipCounter == 1) {
-					var hints = [ 
+					var hints = [
 						'Need a hint on what to type? The answer is floating by...',
 						'Need another hint? Walk backwards (backspace/delete) until the quote disappears off the left side of the browser!'
 					]
 
 					alert(hints[getRandomInt(2)]);
 				} else {
-					alert('Need a hint on what to type? The answer is floating by...'); 
+					alert('Need a hint on what to type? The answer is floating by...');
 				}
 				tipCounter = 1;
 				resetCounter = 0;
@@ -327,12 +327,12 @@ $( document ).ready(function() {
 			$('.senora').addClass('senora-step-two');
 		});
 
-		
-		//KEYSTROKES 
+
+		//KEYSTROKES
 		$('input').on("keypress", function (e) {
 			slidePixel = slidePixel - (20 * multiplier);
 			slideBG = slideBG - (15 * multiplier);
-			slideBGWidth = document.getElementById('backgroundScroll').offsetWidth; 
+			slideBGWidth = document.getElementById('backgroundScroll').offsetWidth;
 
 			$('.rock').css('transform', 'translateX('+ slidePixel + 'px)');
 			$('#backgroundScroll').css('width', slideBGWidth + 20);
@@ -345,14 +345,14 @@ $( document ).ready(function() {
 
 		$('input').keyup(function(e){
 			if(e.keyCode == 8) {
-				slidePixel = slidePixel + (20 * multiplier); 
+				slidePixel = slidePixel + (20 * multiplier);
 				slideBG = slideBG + (15 * multiplier);
-				slideBGWidth = document.getElementById('backgroundScroll').offsetWidth; 
+				slideBGWidth = document.getElementById('backgroundScroll').offsetWidth;
 				browserWidth = $(window).width();
 
 
 				if(slideBGWidth > browserWidth) {
-					$('#backgroundScroll').css('width', slideBGWidth - 20);	
+					$('#backgroundScroll').css('width', slideBGWidth - 20);
 					$('#intro-senora').toggleClass('senora-walking');
 					$('#after-senora').toggleClass('after-senora-walking-two');
 					toggleHeels();
@@ -363,31 +363,31 @@ $( document ).ready(function() {
 			}
 		});
 
-				// Heels Audio 
+				// Heels Audio
 				function toggleHeels(){
 					var heelZero = document.getElementById('heel-zero');
 					var heelOne = document.getElementById('heel-one');
 					var heelTwo = document.getElementById('heel-two');
 
-					heelZero.volume = .5; 
+					heelZero.volume = .5;
 					heelOne.volume = .5;
 					heelTwo.volume = .5;
 
 					switch(audioNumber) {
-						case 0: 
+						case 0:
 							heelZero.play();
 							break;
-						case 1: 
+						case 1:
 							heelOne.play();
 							break;
-						case 2: 
+						case 2:
 							heelTwo.play()
 							break;
 					}
 					audioNumber = Math.floor(Math.random() * 3);
 				}
 
-						// TEXT 
+						// TEXT
 		function textEffect(line){
 			var alpha = [';', '.', ',', ':', ';', '~', '`'];
 			var animationSpeed = 10;
@@ -395,7 +395,7 @@ $( document ).ready(function() {
 			var string = line.text();
 			var splitString = string.split("");
 			var copyString = splitString.slice(0);
-	
+
 			var emptyString = copyString.map(function(el){
 				return [alpha[Math.floor(Math.random() * (alpha.length))], index++];
 			})
@@ -403,23 +403,23 @@ $( document ).ready(function() {
 			$.each(copyString, function(i, el){
 				var newChar = emptyString[i];
 				toUnderscore(copyString, line, newChar);
-	
+
 				setTimeout(function(){
 				  fromUnderscore(copyString, splitString, newChar, line);
 				},i * animationSpeed);
 			  })
 		}
-	
+
 		function toUnderscore(copyString, line, newChar){
 			copyString[newChar[1]] = newChar[0];
 			line.text(copyString.join(''));
 		}
-	
+
 		function fromUnderscore(copyString, splitString, newChar, line){
 			copyString[newChar[1]] = splitString[newChar[1]];
 			line.text(copyString.join(""));
 		}
-	
+
 		function shuffle(o){
 			for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 			return o;
@@ -435,10 +435,10 @@ $( document ).ready(function() {
 					this.play()
 				}
 			});
-		} 
+		}
 
 		function switchAudio(x, y, z) {
-			setTimeout(function(){ 
+			setTimeout(function(){
 				x.pause();
 				playAudio(y, z);
 			}, time);
@@ -452,4 +452,3 @@ $( document ).ready(function() {
 
 
 	});
-	

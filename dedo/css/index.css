@@ -30,7 +30,7 @@ body {
     text-align: center;
     color: white;
     font-family: 'misterpixel';
-    
+
 }
 
 .overlay h1 {
@@ -104,7 +104,7 @@ h1 {
 /* INSTANCE OF FLEXBOX CALLED */
 ._right, ._left {
     height: 100vh;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -143,7 +143,7 @@ h1 {
     background-repeat: no-repeat;
     background-size: contain;
     position:absolute;
-    visibility: hidden; 
+    visibility: hidden;
     left: 4%;
     top: 2%;
     transform:translate3d(-50%,-50%,0);
@@ -159,19 +159,19 @@ div#inline {
   }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 1200px) { 
+@media only screen and (max-width: 1200px) {
 h1 {
     font-size: 3em;
 }
 }
 
-@media only screen and (max-width: 1050px) { 
+@media only screen and (max-width: 1050px) {
     h1 {
         font-size: 2.5em;
     }
 }
 
-@media only screen and (max-width: 700px) { 
+@media only screen and (max-width: 700px) {
     ._container div {
         width: 90%;
         padding: 0 5%;
@@ -180,7 +180,7 @@ h1 {
 
     ._right, ._left {
         height: 50vh;
-        display: flex; 
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -214,7 +214,7 @@ p {
 /* //END */
 .overlaid {
     position: absolute;
-    width: 100vw; 
+    width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
@@ -251,7 +251,7 @@ p {
 .centered {
  top: 50%;
  left: 50%;
- transform: translate(-50%, -50%);   
+ transform: translate(-50%, -50%);
 }
 
 h1.display {
@@ -286,7 +286,7 @@ h1.display {
 #credit {
     color: white;
     font-size: 2em;
-    font-family: 'misterpixel'; 
+    font-family: 'misterpixel';
     position: absolute;
     text-align: center;
 }
@@ -307,7 +307,7 @@ a {
 #enter {
     border-style: solid;
     border-width: 4px;
-    font-family: 'misterpixel'; 
+    font-family: 'misterpixel';
     border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
     border-image-repeat: stretch;
     border-image-width: 2;
@@ -338,13 +338,13 @@ a {
     content: "";
     box-shadow: inset -4px -4px rgba(0, 0, 0, 0.214);
   }
-  
+
   #enter:focus::after,
   #enter:hover::after {
     box-shadow: inset -6px -6px rgba(0, 0, 0, 0.214);
   }
 
-  
+
 .blue {
     background-color:#006ff4 !important;
 }
@@ -354,7 +354,7 @@ a {
     margin-bottom: 10px;
 }
 .float-right {
-    float: right; 
+    float: right;
 }
 
 
@@ -369,7 +369,7 @@ a {
 .display-none {
     display: none !important;
 }
-@media only screen and (max-width: 980px) { 
+@media only screen and (max-width: 980px) {
     .images img {
         width: 250px;
         margin-right: 10px;
@@ -386,7 +386,7 @@ a {
 
 }
 
-@media only screen and (max-width: 700px) { 
+@media only screen and (max-width: 700px) {
     .overlaid h1 {
         font-size: 2.5em;
     }
@@ -396,12 +396,12 @@ a {
 }
 
 
-@media only screen and (max-width: 400px) { 
+@media only screen and (max-width: 500px) {
 
     #credit {
         color: white;
         font-size: 1.5em;
-        font-family: 'misterpixel'; 
+        font-family: 'misterpixel';
         position: absolute;
         text-align: center;
         width: 100%;
@@ -435,11 +435,11 @@ a {
 
     h2 {
         font-size: 2em !important;
-    }  
+    }
 
     .circle {
         position: absolute;
-        top: 50%; 
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) !important;
         width: 150px;
@@ -452,10 +452,23 @@ a {
 
     #finger-two {
         opacity: .3;
+        top: 40%;
+        left: 50%;
     }
 
     #intro div {
-        width: 90%;
+      position: absolute;
+      left: inherit;
+      top: 10%;
+      padding: 0 30px;
+      transform: none;
+    }
+    ._right, ._left {
+      height: 40vh;
+    }
+
+    ._container ._obj {
+      top: inherit;
     }
 
     p {
@@ -664,4 +677,3 @@ a {
   .lity-hide {
     display: none;
   }
-  
